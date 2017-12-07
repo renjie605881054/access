@@ -1,18 +1,19 @@
 package com.nb.web.controller;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@EnableAutoConfiguration
-@SpringBootApplication
+@RequestMapping("/index/")
 public class IndexController {
 	
-	@RequestMapping(value="/")
-	public String indexData() {
+	@RequestMapping(value="{name}")
+	public String indexData(@PathVariable String name, HttpServletRequest request){
 		return "index";
 	}
+	
+	
 }

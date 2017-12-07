@@ -1,11 +1,13 @@
 package com.nb.web.start;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.nb.web.controller.IndexController;
-
+@SpringBootApplication
+@ComponentScan(basePackages = {"com.nb.web"})
 public class WebApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(IndexController.class, args);
+		SpringApplication.run(WebApplication.class, args);
 	}
 }
